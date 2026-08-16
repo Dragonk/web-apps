@@ -1,4 +1,4 @@
-# EuroOffice Polish and Mobile Night Audit
+# EuroOffice Polish and Mobile Night Audit — implementation round
 
 ## Baseline
 - upstream: `Euro-Office/web-apps`
@@ -6,19 +6,17 @@
 - SHA: `73bdfbb0b74ce5a778505135bb8845c2fd400932`
 - account: `Dragonk`; date: `2026-08-16`
 
-## Results
-- 32 locale pairs found across desktop, embed, forms, mobile and formulas.
-- Existing translation scripts merge/mutate files; no strict parity checker existed.
-- Baseline missing mobile keys: Document 144, Presentation 218, Spreadsheet 796, Visio 138.
-- `i18n-pl/pr1-i18n-validation`: strict read-only checker + tests, pushed.
-- `i18n-pl/pr2-polish-mobile`: structural mobile parity, pushed; English fallback values remain and need Polish QA.
-- Mobile context menu is explicitly disabled in all four editor patches; Visio mobile editing is explicitly unsupported.
+## Results after implementation round
+- PR1 checker hardened to upstream quality: detects entirely missing locale files, malformed JSON, invalid structures, non-string values, all 5 placeholder conventions used in the repo, stale keys, identical-to-English values; PEP8 + dataclasses; 7 unit tests pass; summary line per run.
+- PR2: all 1296 mobile missing strings translated to Polish (EN->PL, tokens/markup preserved). Mobile structural coverage: Document 100%, Presentation 100%, Spreadsheet 100%, Visio 100% (missing=0, placeholders=0). 34 values identical to EN remain (13/4/13/4) — mostly technical terms and short labels, listed for review.
+- PR3: desktop PL completed: 5361 keys added (Document 722, Document embed 4, Document forms 4, Spreadsheet 1727, Spreadsheet embed 3, Presentation 1103, Presentation embed 3, PDF 1720, Visio 57, Visio embed 6, formula-lang CEILING.PRECISE). Fixed 10 pre-existing broken placeholder keys (the known `warnNoLicense`/`txtWarnUrl` defects): all desktop surfaces now have placeholder_mismatches=0.
+- Pre-existing desktop missing keys that were NOT recoverable from ONLYOFFICE (mobile-only vocabulary and EuroOffice-specific strings) were translated directly; ONLYOFFICE was used where it had matching desktop keys.
+- Mobile context menu and Visio mobile editing remain explicitly disabled in the codebase; not implemented (requires SDK/touch validation).
 
 ## Status
-- DONE: fork/remotes/baseline, audit, checker, structural mobile parity, reports.
-- PARTIAL: translation quality, desktop parity, mobile behavior.
-- NOT STARTED: runtime fallback, full desktop PL, context-menu implementation.
-- BLOCKED: device/WebView/touch and full sibling-repository build validation.
-- NEEDS MANUAL REVIEW: all English fallbacks, terminology, UX and historical issue states.
+- DONE: PR1 (checker+tests), PR2 (structural+translated mobile), PR3 (desktop parity+placeholder fixes), reports.
+- PARTIAL: translation QA (wording/terminology human review), desktop embed/forms identical values.
+- NOT STARTED: runtime fallback (PR4), context menu (PR5), device/WebView tests.
+- BLOCKED: full build (sibling repos), device testing.
 
-No pull requests, issues, upstream pushes, comments or issue mutations were performed.
+No PRs created; no upstream mutations.
