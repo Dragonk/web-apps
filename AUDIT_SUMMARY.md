@@ -14,8 +14,8 @@
 - Mobile context menu and Visio mobile editing remain explicitly disabled in the codebase; not implemented (requires SDK/touch validation).
 
 ## Status
-- DONE: PR1 (checker+tests), PR2 (structural mobile parity+QA corrections), PR3 (desktop parity+placeholder fixes+QA corrections), reports.
-- PARTIAL: translation QA (diff-scoped linguistic/format QA completed with diff-scoped linguistic/format QA; independent human review remains recommended), desktop embed/forms identical values.
+- DONE: PR1 (checker+tests), PR2 (structural mobile parity+QA corrections), PR3 (desktop parity+placeholder fixes+additional contextual QA corrections), reports. PR3 remains NO pending further diff-only contextual review.
+- PARTIAL: translation QA (diff-scoped linguistic/format QA completed; independent human review remains recommended), desktop embed/forms identical values.
 - NOT STARTED: runtime fallback (PR4), context menu (PR5), device/WebView tests.
 - BLOCKED: full build (sibling repos), device testing.
 
