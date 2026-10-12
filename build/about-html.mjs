@@ -39,6 +39,8 @@ export function aboutHtml(theme = process.env.THEME || 'euro-office') {
   const urls = {
     licenceUrl: main ? `${sourceUrl}/${main.repo}/blob/${main.sha}/LICENSE` : 'https://www.gnu.org/licenses/agpl-3.0.html',
     sourceUrl:  main ? `${sourceUrl}/${main.repo}/tree/${main.sha}` : sourceUrl,
+    // Commit history until a list of modifications is shipped with the program
+    modificationsUrl: main ? `${sourceUrl}/${main.repo}/commits/${main.sha}` : sourceUrl,
   };
 
   const renderText = text => escape(text)
