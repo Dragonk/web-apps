@@ -110,7 +110,7 @@
     "errorLoadingFont": "Czcionki nie zostały załadowane.<br>Skontaktuj się z administratorem serwera dokumentów.",
     "errorSaveWatermark": "Ten plik zawiera obraz znaku wodnego połączony z inną domeną.<br>Aby był widoczny w formacie PDF, zaktualizuj obraz znaku wodnego tak, aby zawierał łącze z tej samej domeny co Twój dokument, lub prześlij go z komputera.",
     "errorSessionAbsolute": "Sesja edycji dokumentu wygasła. Proszę przeładować stronę.",
-    "errorSessionIdle": "Dokument nie był redagowany od dłuższego czasu. Proszę przeładować stronę.",
+    "errorSessionIdle": "Dokument nie był edytowany od dłuższego czasu. Proszę przeładować stronę.",
     "errorSessionToken": "Połączenie z serwerem zostało przerwane. Proszę przeładować stronę.",
     "errorSetPassword": "Nie można ustawić hasła.",
     "errorToken": "Token zabezpieczający dokumentu nie jest poprawnie utworzony.<br>Skontaktuj się z administratorem serwera dokumentów.",
